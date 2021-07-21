@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Reservation from './Reservation/Reservation';
 import Form from './Form/Form'
-// import menu from '../sample-data/menuData'
 import reservations from '../sample-data/reservationData'
 import './App.css';
 
