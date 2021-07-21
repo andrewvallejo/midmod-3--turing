@@ -1,0 +1,10 @@
+.card {
+  width: 10rem;
+  background: white;
+  color: teal;
+  border: 1.5 solid teal;
+}
+
+.button {
+  background: teal;
+}
