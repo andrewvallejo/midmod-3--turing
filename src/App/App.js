@@ -21,7 +21,7 @@ class App extends Component {
   addReservation = (newReservation) => {
     const currentReservations = [...this.state.reservations, newReservation]
     return fetch('http://localhost:3001/api/v1/reservations', {
-      method: 'Post',
+      method: 'POST',
       body: JSON.stringify(newReservation),
       headers: {
         'Content-type': 'application/json'
@@ -31,12 +31,25 @@ class App extends Component {
     })
   }
 
+  deleteReservation = (id) => {
+    const filterResy = this.state.reservations.filter(resy => resy.id !== id)
+    return fetch('http://localhost:3001/api/v1/reservations/:id', {
+      method: 'delete',
+      body: JSON.stringify(id),
+      header: {
+        'Content-type': 'application/json'
+      }
+  }).then(() => {
+    this.setState({ reservations: filterResy })
+  })
+}
+
   render() {
     return (
       <main className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
           <Form addReservation={this.addReservation}/>
-          <Reservation resyInfo={this.state.reservations}/>
+          <Reservation resyInfo={this.state.reservations} deleteResy={this.deleteReservation}/>
       </main>
     )
   }
