@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import menu from '../sample-data/menuData'
+import reservations from '../sample-data/reservationData'
 import './App.css';
 
 class App extends Component {
