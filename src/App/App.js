@@ -21,9 +21,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
           <Form addReservation={this.addReservation}/>
-        </div>
           <Reservation resyInfo={this.state.reservations}/>
       </main>
     )
