@@ -12,8 +12,23 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    return fetch('http://localhost:3001/api/v1/reservations')
+    .then(response => response.json())
+    .then(resyData => this.setState({reservations: resyData}))
+  }
+
   addReservation = (newReservation) => {
-    this.setState({ reservations: [...this.state.reservations, newReservation]})
+    const currentReservations = [...this.state.reservations, newReservation]
+    return fetch('http://localhost:3001/api/v1/reservations', {
+      method: 'Post',
+      body: JSON.stringify(newReservation),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }).then(() => {
+      this.setState({ reservations: currentReservations })
+    })
   }
 
   render() {
