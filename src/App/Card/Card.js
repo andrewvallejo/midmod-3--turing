@@ -7,7 +7,7 @@ const Card = ({number, name, date, time, id, deleteResy}) => {
       <h4>{name}</h4>
         <p>{date}</p>
         <p>{time}</p>
-      <h3>Number of guests: {number}</h3>
+      <p>Number of guests: {number}</p>
       <button onClick={() => deleteResy(id)}>Cancel</button>
     </article>
   )
