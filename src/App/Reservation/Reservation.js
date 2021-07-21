@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Card/Card'
 import './Reservation.css'
 
-const Reservation = ({resyInfo}) => {
+const Reservation = ({resyInfo, deleteResy}) => {
   const reservationCards = resyInfo.map(res => {
     return (
       <Card
@@ -12,6 +12,7 @@ const Reservation = ({resyInfo}) => {
         time={res.time}
         id={res.id}
         key={res.id}
+        deleteResy={deleteResy}
       />
     )
   })
