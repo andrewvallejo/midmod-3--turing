@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Reservation from './Reservation/Reservation';
-import Card from './Card/Card'
 import menu from '../sample-data/menuData'
 import reservations from '../sample-data/reservationData'
 import './App.css';
