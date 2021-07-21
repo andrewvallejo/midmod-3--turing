@@ -13,13 +13,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
         
         </div>
           <Reservation resyInfo={this.state.reservations[0]}/>
-      </div>
+      </main>
     )
   }
 }
