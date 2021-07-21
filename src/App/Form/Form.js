@@ -28,7 +28,7 @@ class Form extends Component {
 
   render() {
     return ( 
-    <form>
+    <form className="resy-form">
       <input 
         type='text'
         placeholder='Name'
